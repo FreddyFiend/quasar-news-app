@@ -2,6 +2,19 @@
 
 A Vue.js Task for job interview
 
+NewsAPI didn't provide an endpoint for single article so detailed page couldn't have been made in Quasar
+
+## Checklist
+Searchbar ✔
+Sort Options ✔
+Sort by date ✔
+Visually appealing ✔
+Loading screen ✔
+Responsive ✔
+Cache system with TanStack Query ✔
+Pagination ✔
+
+
 ## Install the dependencies
 ```bash
 yarn
