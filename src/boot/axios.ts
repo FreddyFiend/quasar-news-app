@@ -18,8 +18,7 @@ const api = axios.create({
   // baseURL: process.env.API,
   baseURL: 'https://newsapi.org/v2/everything',
 });
-api.defaults.headers.common['Authorization'] =
-  '05d664acfac9451999bfe98ab3bde26d';
+api.defaults.headers.common['Authorization'] = process.env.API_KEY;
 
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
