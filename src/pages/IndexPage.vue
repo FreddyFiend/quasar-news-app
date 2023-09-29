@@ -56,7 +56,6 @@ const updateQuery = (payload: {
   let q = payload?.q?.split(' ').join('+');
 
   let oldValues = qS.parse(searchQuery.value, {});
-  console.log(oldValues);
 
   searchQuery.value = qS.stringify({
     q: q || oldValues?.q,
@@ -67,7 +66,7 @@ const updateQuery = (payload: {
   });
 };
 
-const { isLoading, isFetching, isError, data, error } = useQuery({
+const { isLoading, data } = useQuery({
   queryKey: [searchQuery],
   queryFn: () => api.get('?' + searchQuery.value),
   select: (response) => response.data,
