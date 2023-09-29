@@ -11,16 +11,30 @@
           })
       "
     />
+
+    <!-- Loading -->
     <div class="flex justify-center q-pa-xl" v-if="isLoading">
       <q-spinner color="primary" size="150px" />
     </div>
+
+    <!-- When no article is found -->
     <div
       v-if="!isLoading && !data?.articles?.length"
-      class="text-h3 text-center"
+      class="text-h4 text-center"
     >
       No Articles found.
     </div>
+
+    <!-- When error is occurred -->
+    <div v-if="isError" class="text-h4 text-center">
+      AN Unexpected Error Occurred.
+    </div>
+
+    <!-- Articles Component -->
     <ArticleItems :articles="data?.articles" />
+
+    <!-- Pagination buttons -->
+
     <div class="flex justify-center">
       <PaginationComponent
         :max-pages="10"
@@ -66,7 +80,7 @@ const updateQuery = (payload: {
   });
 };
 
-const { isLoading, data } = useQuery({
+const { isLoading, data, isError } = useQuery({
   queryKey: [searchQuery],
   queryFn: () => api.get('?' + searchQuery.value),
   select: (response) => response.data,

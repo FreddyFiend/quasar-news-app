@@ -20,12 +20,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-//Simplifying the date for user experience
-import { formatDistance, subDays } from 'date-fns';
-import ArticleFullscreenDialog from './ArticleFullscreenDialog.vue';
-import { useArticleStore } from 'src/stores/article-store';
-
-const articleStore = useArticleStore();
+import { formatDistance } from 'date-fns';
 
 export interface ArticleProps {
   title?: string;
@@ -41,17 +36,10 @@ export interface ArticleProps {
   };
 }
 
-const {
-  title,
-  description,
-  author,
-  content,
-  publishedAt,
-  source,
-  url,
-  urlToImage,
-} = defineProps<ArticleProps>();
+const { title, description, author, publishedAt, url, urlToImage } =
+  defineProps<ArticleProps>();
 
+// Converting time format into really human readable format
 const time = computed(() =>
   formatDistance(new Date(publishedAt || ''), new Date(), { addSuffix: true })
 );
