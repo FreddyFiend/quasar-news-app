@@ -1,8 +1,7 @@
 # Quasar News App (quasar-news-app)
 
-A Vue.js Task for job interview
+A Vue.js Task for a job interview
 
-NewsAPI didn't provide an endpoint for single article so detailed page couldn't have been made in Quasar
 
 ## Checklist
 
@@ -23,7 +22,7 @@ yarn
 npm install
 ```
 
-## Create ".env" file in source directory and write the following text to create API key
+## Create ".env" file in the source directory and write the following text to create the API key
 
 ```
 API_KEY=05d664acfac9451999bfe98ab3bde26d
