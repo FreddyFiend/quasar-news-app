@@ -22,7 +22,7 @@ yarn
 npm install
 ```
 
-## Create ".env" file in the source directory and write the following text to create the API key
+## Create ".env" file in the root directory and write the following text to create the API key
 
 ```
 API_KEY=05d664acfac9451999bfe98ab3bde26d
